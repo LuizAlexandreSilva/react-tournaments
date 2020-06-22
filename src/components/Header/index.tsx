@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 
 import {
   Container,
@@ -7,16 +7,56 @@ import {
   HeaderContent,
   HeaderLeft,
   HeaderRight,
+  TextButton,
 } from './styles';
 import logo from '../../assets/logo.svg';
+import ModalLogin from '../ModalLogin';
+import ModalRegister from '../ModalRegister';
+
+interface ICredentials {
+  email: string;
+  password: string;
+}
+
+interface ICreateAccountFormData {
+  username: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+}
 
 const Header: React.FC = () => {
-  const goToSignUp = useCallback((event) => {
-    event.preventDefault();
+  const [modalLoginIsOpen, setLoginIsOpen] = useState(false);
+  const [modalRegisterIsOpen, setRegisterIsOpen] = useState(false);
+
+  const toggleLoginModal = useCallback(() => {
+    setLoginIsOpen(!modalLoginIsOpen);
+  }, [modalLoginIsOpen]);
+
+  const toggleRegisterModal = useCallback(() => {
+    setRegisterIsOpen(!modalRegisterIsOpen);
+  }, [modalRegisterIsOpen]);
+
+  const handleLogin = useCallback((data: ICredentials) => {
+    console.log(data);
+  }, []);
+
+  const handleRegister = useCallback((data: ICreateAccountFormData) => {
+    console.log(data);
   }, []);
 
   return (
     <Container>
+      <ModalLogin
+        isOpen={modalLoginIsOpen}
+        setIsOpen={toggleLoginModal}
+        handleLogin={handleLogin}
+      />
+      <ModalRegister
+        isOpen={modalRegisterIsOpen}
+        setIsOpen={toggleRegisterModal}
+        handleRegister={handleRegister}
+      />
       <HeaderContent>
         <HeaderLeft>
           <HeaderLogo src={logo} alt="TFT Tournaments" />
@@ -24,9 +64,9 @@ const Header: React.FC = () => {
         </HeaderLeft>
         <HeaderRight>
           <span>Do you want to create a tournament?</span>
-          <a href="">Login</a>
+          <TextButton onClick={toggleLoginModal}>Login</TextButton>
           <span>or</span>
-          <a href="">Register</a>
+          <TextButton onClick={toggleRegisterModal}>Register</TextButton>
         </HeaderRight>
       </HeaderContent>
     </Container>

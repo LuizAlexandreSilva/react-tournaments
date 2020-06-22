@@ -1,6 +1,9 @@
 import React from 'react';
 import { MdSearch } from 'react-icons/md';
+
 import Header from '../../components/Header';
+import Input from '../../components/Input';
+import Button from '../../components/Button';
 
 import {
   Container,
@@ -8,8 +11,6 @@ import {
   InputContainer,
   Description,
 } from './styles';
-import Input from '../../components/Input';
-import Button from '../../components/Button';
 
 const Welcome: React.FC = () => {
   return (
@@ -25,8 +26,8 @@ const Welcome: React.FC = () => {
           <span>Looking for a tournament?</span>
           <InputContainer>
             <Input
+              name="search"
               containerStyle={{ marginRight: 10 }}
-              name="buscar-torneio"
               placeholder="Search tournament"
               icon={MdSearch}
             />

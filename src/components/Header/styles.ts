@@ -42,3 +42,10 @@ export const HeaderLogo = styled.img`
   height: 32px;
   margin-right: 15px;
 `;
+
+export const TextButton = styled.button`
+  text-decoration: underline;
+  color: var(--primary);
+  background-color: transparent;
+  border: 0;
+`;
