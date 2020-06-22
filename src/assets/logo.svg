@@ -1,0 +1,29 @@
+<svg viewBox="0 0 500 500" width="300" height="300" xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none">
+    <g>
+        <g opacity="1" transform="rotate(0 16 246.1556)">
+            <svg x="4" y="4" width="100%" height="100%" viewBox="100 20 4 164">
+                <g transform="matrix(1 0 0 1 0 0)">
+                    <g>
+                        <path d="M122.1 100.1l17.3 17.3 11.9-11.9v22.7l28.3-28.3-33.3-33.3c-4.4 10.6-10.9 20.3-19 28.4 0-.1-5.2 5.1-5.2 5.1z"
+                              class="icon1d96f944d-8eae-4103-94de-fd7318675ba7" fill="#FF9000"></path>
+                        <path d="M117.3 139.5L100 122.2l-17 17 12 12H72.4l27.9 27.9 27.9-27.9h-22.7c0 .1 11.8-11.7 11.8-11.7z"
+                              class="icon1d96f944d-8eae-4103-94de-fd7318675ba7" fill="#FF9000"></path>
+                        <path d="M100.3 20.5l28.6 28.6L100 78 71.4 49.4l28.9-28.9z" fill="#FF9000"
+                              class="icon1d96f944d-8eae-4103-94de-fd7318675ba7"></path>
+                        <path d="M60.9 117.1l17-17-5.2-5.2c-8-8-14.4-17.5-18.9-28L21 99.8 49.2 128v-22.6c0 .1 11.7 11.7 11.7 11.7z"
+                              class="icon1d96f944d-8eae-4103-94de-fd7318675ba7" fill="#FF9000"></path>
+                        <path d="M77.9 100.1l11 11-17 17-11-11 17-17z"
+                              class="icon2d96f944d-8eae-4103-94de-fd7318675ba7" fill="#EFEFEF"></path>
+                        <path d="M128.4 128.4l11-11-17.3-17.3L111 89l40.8-40.8c.8-4.3 1.3-8.6 1.4-13l.4-10.8-24.7 24.7L100 78 71.4 49.4l-25-25 .4 10.8c.2 4.4.6 8.7 1.4 13l80.2 80.2z"
+                              class="icon2d96f944d-8eae-4103-94de-fd7318675ba7" fill="#EFEFEF"></path>
+                        <path d="M174.1 144.6l-3.7 3.7-19.1-19.1v-23.8l-11.9 11.9-11 11-11.1 11.1-11.8 11.8h24.2l18.9 18.9-3.4 3.4 5.9 5.9 29-29-6-5.8z"
+                              class="icon3d96f944d-8eae-4103-94de-fd7318675ba7" fill="#656565"></path>
+                        <path d="M83 139.2l-11.1-11.1-11-11-11.6-11.7v23.3l-19.6 19.6-3.7-3.7-5.9 5.9 29 29 5.9-5.9-3.4-3.4 18.9-18.9H95l-12-12.1z"
+                              class="icon3d96f944d-8eae-4103-94de-fd7318675ba7" fill="#656565"></path>
+                    </g>
+                </g>
+            </svg>
+        </g>
+    </g>
+</svg>
