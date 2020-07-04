@@ -41,10 +41,6 @@ const Header: React.FC = () => {
     console.log(data);
   }, []);
 
-  const handleRegister = useCallback((data: ICreateAccountFormData) => {
-    console.log(data);
-  }, []);
-
   return (
     <Container>
       <ModalLogin
@@ -55,7 +51,6 @@ const Header: React.FC = () => {
       <ModalRegister
         isOpen={modalRegisterIsOpen}
         setIsOpen={toggleRegisterModal}
-        handleRegister={handleRegister}
       />
       <HeaderContent>
         <HeaderLeft>
