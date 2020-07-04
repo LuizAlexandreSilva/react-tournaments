@@ -1,5 +1,6 @@
 import React, { useCallback, useState } from 'react';
 
+import { useHistory } from 'react-router-dom';
 import {
   Container,
   HeaderTitle,
@@ -8,26 +9,19 @@ import {
   HeaderLeft,
   HeaderRight,
   TextButton,
+  Username,
 } from './styles';
 import logo from '../../assets/logo.svg';
 import ModalLogin from '../ModalLogin';
 import ModalRegister from '../ModalRegister';
-
-interface ICredentials {
-  email: string;
-  password: string;
-}
-
-interface ICreateAccountFormData {
-  username: string;
-  email: string;
-  password: string;
-  confirmPassword: string;
-}
+import { useAuth } from '../../hooks/auth';
 
 const Header: React.FC = () => {
   const [modalLoginIsOpen, setLoginIsOpen] = useState(false);
   const [modalRegisterIsOpen, setRegisterIsOpen] = useState(false);
+
+  const history = useHistory();
+  const { user, signOut } = useAuth();
 
   const toggleLoginModal = useCallback(() => {
     setLoginIsOpen(!modalLoginIsOpen);
@@ -37,17 +31,15 @@ const Header: React.FC = () => {
     setRegisterIsOpen(!modalRegisterIsOpen);
   }, [modalRegisterIsOpen]);
 
-  const handleLogin = useCallback((data: ICredentials) => {
-    console.log(data);
-  }, []);
+  const handleLogout = useCallback(() => {
+    signOut();
+
+    history.push('/');
+  }, [signOut, history]);
 
   return (
     <Container>
-      <ModalLogin
-        isOpen={modalLoginIsOpen}
-        setIsOpen={toggleLoginModal}
-        handleLogin={handleLogin}
-      />
+      <ModalLogin isOpen={modalLoginIsOpen} setIsOpen={toggleLoginModal} />
       <ModalRegister
         isOpen={modalRegisterIsOpen}
         setIsOpen={toggleRegisterModal}
@@ -58,10 +50,19 @@ const Header: React.FC = () => {
           <HeaderTitle>TFT Tournaments</HeaderTitle>
         </HeaderLeft>
         <HeaderRight>
-          <span>Do you want to create a tournament?</span>
-          <TextButton onClick={toggleLoginModal}>Login</TextButton>
-          <span>or</span>
-          <TextButton onClick={toggleRegisterModal}>Register</TextButton>
+          {user ? (
+            <>
+              <Username>{user.username}</Username>
+              <TextButton onClick={handleLogout}>Logout</TextButton>
+            </>
+          ) : (
+              <>
+                <span>Do you want to create a tournament?</span>
+                <TextButton onClick={toggleLoginModal}>Login</TextButton>
+                <span>or</span>
+                <TextButton onClick={toggleRegisterModal}>Register</TextButton>
+              </>
+            )}
         </HeaderRight>
       </HeaderContent>
     </Container>

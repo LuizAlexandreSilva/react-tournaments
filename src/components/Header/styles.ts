@@ -49,3 +49,8 @@ export const TextButton = styled.button`
   background-color: transparent;
   border: 0;
 `;
+
+export const Username = styled.span`
+  padding-right: 5px;
+  border-right: 1px solid var(--white);
+`;

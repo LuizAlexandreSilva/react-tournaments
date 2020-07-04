@@ -3,11 +3,11 @@ import api from '../services/apiClient';
 
 interface User {
   id: string;
-  name: string;
+  username: string;
   email: string;
 }
 interface SignInCredentials {
-  email: string;
+  username: string;
   password: string;
 }
 
@@ -39,9 +39,9 @@ export const AuthProvider: React.FC = ({ children }) => {
     return {} as AuthState;
   });
 
-  const signIn = useCallback(async ({ email, password }) => {
+  const signIn = useCallback(async ({ username, password }) => {
     const response = await api.post('sessions', {
-      email,
+      username,
       password,
     });
 
