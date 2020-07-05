@@ -35,6 +35,7 @@ export const HeaderRight = styled.div`
 
 export const HeaderTitle = styled.h2`
   font-weight: 700;
+  margin-bottom: 0;
 `;
 
 export const HeaderLogo = styled.img`

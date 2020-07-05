@@ -6,7 +6,7 @@ import React, {
 } from 'react';
 
 import { IconBaseProps } from 'react-icons';
-import { Container } from './styles';
+import { ContainerInput } from './styles';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
@@ -21,7 +21,6 @@ const Input: React.FC<InputProps> = ({
 }) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [isFocused, setIsFocused] = useState(false);
-  const [isFilled, setIsFilled] = useState(false);
 
   const handleInputFocus = useCallback(() => {
     setIsFocused(true);
@@ -29,20 +28,16 @@ const Input: React.FC<InputProps> = ({
 
   const handleInputBlur = useCallback(() => {
     setIsFocused(false);
-
-    setIsFilled(!!inputRef.current?.value);
   }, []);
 
   return (
-    <Container style={containerStyle} isFilled={isFilled} isFocused={isFocused}>
-      {Icon && <Icon size={20} />}
-      <input
-        ref={inputRef}
-        onFocus={handleInputFocus}
-        onBlur={handleInputBlur}
-        {...rest}
-      />
-    </Container>
+    <ContainerInput
+      ref={inputRef}
+      onFocus={handleInputFocus}
+      onBlur={handleInputBlur}
+      isFocused={isFocused}
+      {...rest}
+    />
   );
 };
 

@@ -7,7 +7,7 @@ import * as Yup from 'yup';
 import { Form } from './styles';
 import Modal from '../Modal';
 import FormInput from '../FormInput';
-import Button from '../Button';
+import AppButton from '../AppButton';
 import { useAuth } from '../../hooks/auth';
 import { useToast } from '../../hooks/toast';
 import getValidationErrors from '../../utils/getValidationErrors';
@@ -62,7 +62,7 @@ const ModalLogin: React.FC<IModalProps> = ({ isOpen, setIsOpen }) => {
         });
       }
     },
-    [setIsOpen],
+    [setIsOpen, signIn, addToast],
   );
 
   return (
@@ -78,7 +78,9 @@ const ModalLogin: React.FC<IModalProps> = ({ isOpen, setIsOpen }) => {
           type="password"
         />
 
-        <Button type="submit">Submit</Button>
+        <AppButton variant="primary" type="submit">
+          Submit
+        </AppButton>
       </Form>
     </Modal>
   );

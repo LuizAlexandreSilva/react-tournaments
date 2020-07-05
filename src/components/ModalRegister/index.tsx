@@ -2,13 +2,12 @@ import React, { useRef, useCallback } from 'react';
 
 import { FiMail, FiLock, FiUser } from 'react-icons/fi';
 import { FormHandles } from '@unform/core';
-import { useHistory } from 'react-router-dom';
 import * as Yup from 'yup';
 
 import { Form } from './styles';
 import Modal from '../Modal';
 import FormInput from '../FormInput';
-import Button from '../Button';
+import AppButton from '../AppButton';
 import { useToast } from '../../hooks/toast';
 import api from '../../services/apiClient';
 import getValidationErrors from '../../utils/getValidationErrors';
@@ -28,7 +27,6 @@ interface IModalProps {
 const ModalRegister: React.FC<IModalProps> = ({ isOpen, setIsOpen }) => {
   const formRef = useRef<FormHandles>(null);
   const { addToast } = useToast();
-  const history = useHistory();
 
   const handleSubmit = useCallback(
     async (data: ICreateAccountFormData) => {
@@ -57,7 +55,6 @@ const ModalRegister: React.FC<IModalProps> = ({ isOpen, setIsOpen }) => {
 
         await api.post('/users', data);
         setIsOpen();
-        // history.push('/');
 
         addToast({
           type: 'success',
@@ -81,7 +78,7 @@ const ModalRegister: React.FC<IModalProps> = ({ isOpen, setIsOpen }) => {
         });
       }
     },
-    [addToast, history, setIsOpen],
+    [addToast, setIsOpen],
   );
 
   return (
@@ -106,7 +103,9 @@ const ModalRegister: React.FC<IModalProps> = ({ isOpen, setIsOpen }) => {
           type="password"
         />
 
-        <Button type="submit">Submit</Button>
+        <AppButton variant="primary" type="submit">
+          Submit
+        </AppButton>
       </Form>
     </Modal>
   );

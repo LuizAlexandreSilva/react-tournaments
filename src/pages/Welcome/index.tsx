@@ -1,9 +1,10 @@
 import React from 'react';
 import { MdSearch } from 'react-icons/md';
 
+import Button from 'react-bootstrap/Button';
+import { InputGroup } from 'react-bootstrap';
 import Header from '../../components/Header';
 import Input from '../../components/Input';
-import Button from '../../components/Button';
 
 import {
   Container,
@@ -25,13 +26,16 @@ const Welcome: React.FC = () => {
         <SearchContainer>
           <span>Looking for a tournament?</span>
           <InputContainer>
-            <Input
-              name="search"
-              containerStyle={{ marginRight: 10 }}
-              placeholder="Search tournament"
-              icon={MdSearch}
-            />
-            <Button>Search</Button>
+            <InputGroup>
+              <Input
+                name="search"
+                placeholder="Search tournament"
+                icon={MdSearch}
+              />
+              <InputGroup.Append>
+                <Button variant="primary">Search</Button>
+              </InputGroup.Append>
+            </InputGroup>
           </InputContainer>
         </SearchContainer>
       </Container>

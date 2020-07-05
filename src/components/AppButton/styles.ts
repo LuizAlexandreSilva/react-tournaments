@@ -6,7 +6,6 @@ interface ContainerProps {
 }
 
 export const Container = styled.button<ContainerProps>`
-  background: var(--primary);
   height: 50px;
   width: 120px;
   border-radius: 10px;

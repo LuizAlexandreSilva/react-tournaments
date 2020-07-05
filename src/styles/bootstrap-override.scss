@@ -1,0 +1,11 @@
+$primary: #FF9000;
+
+@import '~bootstrap/scss/bootstrap.scss';
+
+.btn {
+  border-radius: 10px;
+}
+
+.input-group-append {
+  z-index: 0;
+}
