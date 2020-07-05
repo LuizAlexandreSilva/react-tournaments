@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   height: 80px;
   background: var(--header-background);
-  box-shadow: 0px 3px 10px 2px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.6);
 `;
 
 export const HeaderContent = styled.div`
@@ -34,7 +34,7 @@ export const HeaderRight = styled.div`
   }
 `;
 
-export const HeaderTitle = styled.h2`
+export const HeaderTitle = styled.h4`
   font-weight: 700;
   margin-bottom: 0;
 `;

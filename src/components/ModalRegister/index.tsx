@@ -3,11 +3,11 @@ import React, { useRef, useCallback } from 'react';
 import { FiMail, FiLock, FiUser } from 'react-icons/fi';
 import { FormHandles } from '@unform/core';
 import * as Yup from 'yup';
+import { Button } from 'react-bootstrap';
 
 import { Form } from './styles';
 import Modal from '../Modal';
 import FormInput from '../FormInput';
-import AppButton from '../AppButton';
 import { useToast } from '../../hooks/toast';
 import api from '../../services/apiClient';
 import getValidationErrors from '../../utils/getValidationErrors';
@@ -103,9 +103,9 @@ const ModalRegister: React.FC<IModalProps> = ({ isOpen, setIsOpen }) => {
           type="password"
         />
 
-        <AppButton variant="primary" type="submit">
+        <Button variant="primary" type="submit">
           Submit
-        </AppButton>
+        </Button>
       </Form>
     </Modal>
   );

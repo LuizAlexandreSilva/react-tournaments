@@ -1,8 +1,8 @@
-import React from 'react';
-import { MdSearch } from 'react-icons/md';
+import React, { useCallback, useRef } from 'react';
 
 import Button from 'react-bootstrap/Button';
 import { InputGroup } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
 import Header from '../../components/Header';
 import Input from '../../components/Input';
 
@@ -14,6 +14,13 @@ import {
 } from './styles';
 
 const Welcome: React.FC = () => {
+  const inputRef = useRef<HTMLInputElement>(null);
+  const history = useHistory();
+
+  const handleSearch = useCallback(async () => {
+    history.push(`/search-tournaments/?${inputRef.current?.value}`);
+  }, [history]);
+
   return (
     <>
       <Header />
@@ -28,12 +35,14 @@ const Welcome: React.FC = () => {
           <InputContainer>
             <InputGroup>
               <Input
+                inputRef={inputRef}
                 name="search"
                 placeholder="Search tournament"
-                icon={MdSearch}
               />
               <InputGroup.Append>
-                <Button variant="primary">Search</Button>
+                <Button variant="primary" onClick={handleSearch}>
+                  Search
+                </Button>
               </InputGroup.Append>
             </InputGroup>
           </InputContainer>

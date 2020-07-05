@@ -3,11 +3,11 @@ import React, { useRef, useCallback } from 'react';
 import { FiLock, FiUser } from 'react-icons/fi';
 import { FormHandles } from '@unform/core';
 import * as Yup from 'yup';
+import { Button } from 'react-bootstrap';
 
 import { Form } from './styles';
 import Modal from '../Modal';
 import FormInput from '../FormInput';
-import AppButton from '../AppButton';
 import { useAuth } from '../../hooks/auth';
 import { useToast } from '../../hooks/toast';
 import getValidationErrors from '../../utils/getValidationErrors';
@@ -78,9 +78,9 @@ const ModalLogin: React.FC<IModalProps> = ({ isOpen, setIsOpen }) => {
           type="password"
         />
 
-        <AppButton variant="primary" type="submit">
+        <Button variant="primary" type="submit">
           Submit
-        </AppButton>
+        </Button>
       </Form>
     </Modal>
   );
