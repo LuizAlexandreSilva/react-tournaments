@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  padding: 24px 0;
+  height: 80px;
   background: var(--header-background);
   box-shadow: 0px 3px 10px 2px rgba(0, 0, 0, 0.75);
 `;
 
 export const HeaderContent = styled.div`
   max-width: 1120px;
+  height: 100%;
   margin: 0 auto;
 
   display: flex;
